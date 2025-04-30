@@ -59,7 +59,7 @@ const fetchImages = (query) => {
 
         const editBtn = document.createElement("button");
         editBtn.className = "btn btn-sm btn-outline-secondary";
-        editBtn.textContent = "Edit";
+        editBtn.textContent = "Hide";
 
         btnContainer.appendChild(viewBtn);
         btnContainer.appendChild(editBtn);
@@ -73,6 +73,10 @@ const fetchImages = (query) => {
         card.appendChild(cardBody);
         col.appendChild(card);
         rowContainer.appendChild(col);
+
+        editBtn.addEventListener("click", function () {
+          col.remove();
+        });
       });
     })
     .catch((error) => {
